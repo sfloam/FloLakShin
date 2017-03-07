@@ -36,10 +36,6 @@ Lakshay
    Sources of data: http://insideairbnb.com/get-the-data.html
 
 
-Idea#2
-  Topic: Mapping of clean air cycling path 
-         Use EPA data and current google map logistics to map the density of the pollution to guide cyclist in a cleaner air path
-
 
 
 
@@ -61,10 +57,20 @@ Source of data: https://webrobots.io/kickstarter-datasets/
 
 
 
+Idea#2
+  Topic: Mapping of clean air cycling path 
+         Use EPA data and google maps real time data to map the density of the pollution and the traffic of cylcing path 
+         to guide cyclist in a cleaner, faster path
+
+EPA, Google Maps API.
 
 
 
-
+Idea#3
+  Topic: Determine domestic abuse by monitoring text messages
+          Monitor text messages, study them to look for words pertaining to domestic abuse.
+          // just realized that text messages are not public dataset.
+          
 
 
 
