@@ -1,0 +1,7 @@
+set number
+syntax on
+set copyindent
+set shiftwidth=4
+set smarttab
+set showmatch
+set mouse=a
