@@ -1,0 +1,14 @@
+#!/bin/bash
+
+javac -classpath $(yarn classpath)-d. StationMapperRev.java
+javac -classpath $(yarn classpath)-d. StationReducerRev.java
+javac -classpath $(yarn classpath):. -d . StationMR.java
+
+jar -cvf stationData.jar *.class
+
+hadoop jar stationData.jar StationMR StationInput/ghcnd-stations.txt StationOutput
+
+#to execute first type chmod 774 filename in command line
+#then you can use ./filename
+#make sure you change the names of the java files and jar names
+

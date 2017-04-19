@@ -23,8 +23,8 @@ myFile = open("abnb3.csv",'r')
 addressList = []
 address = ""
 count = 0
-startRange = 448 #line you want to start downloading (inclusive)
-endRange = 450 #line you want to finish downloading (exclusive)
+startRange = 594 #line you want to start downloading (inclusive)
+endRange = 643 #line you want to finish downloading (exclusive)
 
 for lines in myFile:
         #this is the start of US Data feel free to customize the starting point
