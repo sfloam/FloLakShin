@@ -1,0 +1,5 @@
+#List of useful commands (UNIX)
+
+#Unizp all csv.gzip files in a folder - Will delete the gzip and maintain csv
+find . -name '*.csv.gz' -exec gzip -d {} \;
+
