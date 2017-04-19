@@ -1,0 +1,22 @@
+--CREATE THE FOLDERS
+$ hdfs dfs -mkdir SeatInput
+$ hdfs dfs -mkdir FlightInput
+$ hdfs dfs -mkdir AirportInput
+
+--ADD DATA TO FOLDERS
+$ hdfs dfs -put nnum_seat.txt SeatInput
+$ hdfs dfs -put 2016all.txt FlightInput
+$ hdfs dfs -put airportcode.txt AirportInput
+
+--VIEW THE FILES IN EACH FOLDER
+$ hdfs dfs -cat SeatInput/nnum_seat.txt
+$ hdfs dfs -cat FlightInput/2016all.txt
+$ hdfs dfs -cat AirportInput/airportcodes.txt
+
+--RUN THE HIVE SCRIPT
+$hive -f /dataclean.q
+
+--CHECK IF THE OUTPUT EXIST
+$hdfs dfs -ls /user/cloudera/flightoutput
+$hdfs dfs -cat /user/cloudera/flightoutput
+
