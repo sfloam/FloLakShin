@@ -1,1 +1,3 @@
 The files Cleaning.java, CleaningMapper.java, CleaningReducer.java are used for cleaning the Airbnb occupancy data. Dates outside our target range of one year are filtered out by the mapper. Since each file of the InsideAirbnb.com data has future reservations for the next year, and not historical data, multiple rows of the same listing for the same date exist. The reducer ensures that in such a situation, only the row closest to the date is considered.
+
+The files Occupancy.java, OccupancyMapper.java, OccupancyReducer.java are for the analytic: to calculate the average monthly occupancy for rows in a given file (assuming that one file contains data related to one city for a particular month)
