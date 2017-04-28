@@ -21,31 +21,29 @@ public class OccupancyMapper
 
     if (arr[0].equals("listing_id"))
     {
-      continue;
-    }
-    
-    String date = arr[1];
-    
-    if (!date.substring(0,7).equals("2016-04") && !date.equals("2016-05-01"))
-    {
-        return;
+      return;
     }
 
+    String city = arr[0];
     
-    String available = arr[2];
+    String date = arr[2];
+    // String this_date = date.substring(0,4) + date.substring(5,7) + date.substring(8,10);
+    
+    String available = arr[3].replace("\t", "");
+
     float price;
 
-    if (arr.length == 4)
+    if (arr.length == 5)
     {
-        price = Float.parseFloat(arr[3].substring(1, arr[3].length()));
+        price = Float.parseFloat(arr[4].substring(1, arr[4].length()));
     }
     else
     {
       price = -1;
     }
 
-    String k = "nyc_2016apr03_2016may01";
-    String v;
+    String k = city + "," + date;
+    String v = "";
 
     if (available.equals("f"))
     {
