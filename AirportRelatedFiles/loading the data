@@ -2,19 +2,24 @@
 $ hdfs dfs -mkdir SeatInput
 $ hdfs dfs -mkdir FlightInput
 $ hdfs dfs -mkdir AirportInput
+$ hdfs dfs -mkdir weather
 
 --ADD DATA TO FOLDERS
-$ hdfs dfs -put nnum_seat.txt SeatInput
-$ hdfs dfs -put 2016all.txt FlightInput
-$ hdfs dfs -put airportcode.txt AirportInput
+$ hdfs dfs -put NNUMSEAT.txt SeatInput
+$ hdfs dfs -put ALL_FLIGHTS.txt FlightInput
+$ hdfs dfs -put airportcodes.txt AirportInput
+$ hdfs dfs -put weather.txt weather
 
 --VIEW THE FILES IN EACH FOLDER
-$ hdfs dfs -cat SeatInput/nnum_seat.txt
-$ hdfs dfs -cat FlightInput/2016all.txt
+$ hdfs dfs -cat SeatInput/NNUMSEAT.txt
+$ hdfs dfs -cat FlightInput/ALL_FLIGHTS.txt
 $ hdfs dfs -cat AirportInput/airportcodes.txt
+$ hdfs dfs -cat weather/weather.txt
 
 --RUN THE HIVE SCRIPT
 $hive -f /dataclean.q
+$hive -f /flightanalysis.q
+
 
 --CHECK IF THE OUTPUT EXIST
 $hdfs dfs -ls /user/cloudera/flightoutput

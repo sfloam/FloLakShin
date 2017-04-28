@@ -3,7 +3,7 @@ create external table nnumseat (n_num string, code string, seats int)
           row format delimited fields terminated by ','
           location '/user/cloudera/SeatInput/';
 
-create external table flightdetail (month string, date string, carrier string, tailnum string, flightnum string, fromapt string, toapt string, cancelled int)
+create external table flightdetail (year int, month int, day int, tailnum string, fromapt string, toapt string)
           row format delimited fields terminated by ','
           location '/user/cloudera/FlightInput/';
 
@@ -18,8 +18,8 @@ describe airport;
 
 
 -- SELECT REQUIRED COLUMNS AND JOIN THE TABLES
-create table temp as select month, date, tailnum, fromapt, toapt, seats from flightdetail, nnumseat where tailnum=n_num;
- create table flight_all as select month, date, tailnum, fromapt, toapt, seats, airport_name, city, state from temp, airport where toapt = aircode;
+create table temp as select * from flightdetail left join nnumseat on tailnum=n_num;
+create table flight_all as select * from temp left join airport on toapt = aircode;
 
 
 --SAVE THE OUTPUT ON HDFS
