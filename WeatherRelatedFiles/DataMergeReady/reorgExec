@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+javac -classpath $(yarn classpath)-d. ReorgWDMapper.java
+javac -classpath $(yarn classpath)-d. ReorgWDReducer.java
+javac -classpath $(yarn classpath):. -d . ReorgWDMR.java
+
+jar -cvf reorgWDJar.jar *.class
+
+hadoop jar reorgWDJar.jar ReorgWDMR FinalDaily/* ReorgWD/
+
+
