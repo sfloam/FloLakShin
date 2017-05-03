@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+javac -classpath $(yarn classpath)-d. WeatherMapperRev.java
+javac -classpath $(yarn classpath)-d. WeatherReducerRev.java
+javac -classpath $(yarn classpath):. -d . WeatherMR.java
+
+jar -cvf weatherJar.jar *.class
+
+hadoop jar weatherJar.jar WeatherMR FloLakShin_Weather/*.dly FloLakShinOutput/
+
+
