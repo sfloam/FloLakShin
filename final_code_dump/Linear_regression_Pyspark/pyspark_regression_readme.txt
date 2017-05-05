@@ -6,6 +6,7 @@ Files:
 4) m_price_scaled_2.libsvm - data formatted to predicted price per night
 5) 2_occ_pred_spark.py - Pyspark script to train a linear regression (with elastic net regularization) model to predict occupancy rate 
 6) 2_price_pred_spark.py - Pyspark script to train a linear regression (with elastic net regularization) model to predict price 
+7) pyspark_screenshot.png - screenshot of running pyspark script
 
 To run:
 
