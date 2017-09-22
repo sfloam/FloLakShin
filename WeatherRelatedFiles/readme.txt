@@ -1,3 +1,22 @@
+
+
+
+PigWeather.pig is what will get you everything joined together. It combines all the data resulting produced by the MapReduce files in this folder.
+
+WeatherMR.java is the MapReduce job file for all weather data. Weather data contains a StationID, Max/Min/Avg Percipitaiton, Temperature, and Snow.
+
+StationMR.java is the MapReduce job file for all station data. Station data contains a StationID, the GPS coordinates of each weather station (found in the weather data above), and the state associated with that GPS location for more efficient filtering.
+
+1. Download the 2016 data (1GB file) from ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/2016.csv.gz. Then run WeatherMR on it. 
+2. Download all station data (ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt). Then run StationMR on that.
+3. Merge the part files created from the above MapReduce programs using WeatherPig.pig. This will allow us to identify the GPS and state of each data point in the 2016 Weather Data set.
+4. When we finalize which cities we are tracking, I will implement a filter to capture only related state data.
+	
+
+
+
+--------------------------------------------------------------------------------
+
 README FILE FOR DAILY GLOBAL HISTORICAL CLIMATOLOGY NETWORK (GHCN-DAILY) 
 Version 3.22
 

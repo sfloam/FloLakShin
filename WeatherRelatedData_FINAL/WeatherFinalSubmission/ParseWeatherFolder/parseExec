@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+javac -classpath $(yarn classpath)-d. ParseWeatherMapper.java
+javac -classpath $(yarn classpath)-d. ParseWeatherReducer.java
+javac -classpath $(yarn classpath):. -d . ParseWeatherMR.java
+
+jar -cvf ParseWeatherJar.jar *.class
+
+hadoop jar ParseWeatherJar.jar ParseWeatherMR FloLakShin_Weather/* DailyParse/
+
+

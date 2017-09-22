@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+javac -classpath $(yarn classpath)-d. DailyMapper.java
+javac -classpath $(yarn classpath)-d. DailyReducer.java
+javac -classpath $(yarn classpath):. -d . DailyMR.java
+
+jar -cvf dailyJar.jar *.class
+
+hadoop jar dailyJar.jar DailyMR piggyWeath/part-r-00000 DailyCombo/
+
+

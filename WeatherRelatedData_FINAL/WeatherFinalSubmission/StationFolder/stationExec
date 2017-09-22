@@ -1,0 +1,11 @@
+#!/bin/bash
+
+javac -classpath $(yarn classpath)-d. StationMapperRev.java
+javac -classpath $(yarn classpath)-d. StationReducerRev.java
+javac -classpath $(yarn classpath):. -d . StationMR.java
+
+jar -cvf stationData.jar *.class
+
+hadoop jar stationData.jar StationMR AllStations/ghcnd-stations.txt StationOutput
+
+
